@@ -93,6 +93,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="VAMemory">
+      <HintPath>..\VAMemory.dll</HintPath>
+    </Reference>
     <Reference Include="Win32Interop.WinHandles, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Win32Interop.WinHandles.2.0.0\lib\net40\Win32Interop.WinHandles.dll</HintPath>
     </Reference>
@@ -127,6 +130,10 @@
       <DependentUpon>ExposedInfoWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="IniFile.cs" />
+    <Compile Include="FarmDstWindow.xaml.cs">
+      <DependentUpon>FarmDstWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListBox\Items\Add.cs" />
     <Compile Include="VirtualInputMethod.cs" />
     <Compile Include="PriorityMultiValueConverter.cs" />
     <Compile Include="SAMSettings.cs" />
@@ -165,6 +172,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="FarmDstWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="SetTimeoutWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

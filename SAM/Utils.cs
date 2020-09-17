@@ -698,7 +698,15 @@ namespace SAM
             !wh.GetWindowText().Contains("—") && 
              wh.GetWindowText().Length > 5));
         }
-
+        public static WindowHandle GetSteamLoginWindowSand(int index)
+        {
+            return TopLevelWindowUtils.FindWindow(wh =>
+            wh.GetClassName().Equals("Sandbox:"+index+":vguiPopupWindow") &&
+            (wh.GetWindowText().Contains("Steam") &&
+            !wh.GetWindowText().Contains("-") &&
+            !wh.GetWindowText().Contains("—") &&
+             wh.GetWindowText().Length > 5));
+        }
         public static WindowHandle GetSteamGuardWindow()
         {
             // Also checking for vguiPopupWindow class name to avoid catching things like browser tabs.
@@ -709,12 +717,45 @@ namespace SAM
              wh.GetWindowText().StartsWith("Steam ガード")));
             return windowHandle;
         }
+        public static WindowHandle GetSteamGuardWindowSand(int index)
+        {
+            // Also checking for vguiPopupWindow class name to avoid catching things like browser tabs.
+            WindowHandle windowHandle = TopLevelWindowUtils.FindWindow(wh =>
+            wh.GetClassName().Equals("Sandbox:" + index + ":vguiPopupWindow") &&
+            (wh.GetWindowText().StartsWith("Steam Guard") ||
+             wh.GetWindowText().StartsWith("Steam 令牌") ||
+             wh.GetWindowText().StartsWith("Steam ガード")));
+            return windowHandle;
+        }
+        public static WindowHandle GetDstPopupWindow()
+        {
+            // Also checking for vguiPopupWindow class name to avoid catching things like browser tabs.
+            WindowHandle windowHandle = TopLevelWindowUtils.FindWindow(wh =>
+            wh.GetClassName().Equals("vguiPopupWindow") &&
+            (wh.GetWindowText().StartsWith("Don't Starve Together")));
+            return windowHandle;
+        }
+        public static WindowHandle GetDstWindow()
+        {
+            // Also checking for vguiPopupWindow class name to avoid catching things like browser tabs.
+            WindowHandle windowHandle = TopLevelWindowUtils.FindWindow(wh =>
+            wh.GetClassName().Equals("opengles2.0") &&
+            (wh.GetWindowText().StartsWith("Don't Starve Together")));
+            return windowHandle;
+        }
 
         public static WindowHandle GetSteamWarningWindow()
         {
             return TopLevelWindowUtils.FindWindow(wh =>
             wh.GetClassName().Equals("vguiPopupWindow") && 
             (wh.GetWindowText().StartsWith("Steam - ") || 
+             wh.GetWindowText().StartsWith("Steam — ")));
+        }
+        public static WindowHandle GetSteamWarningWindowSand(int index)
+        {
+            return TopLevelWindowUtils.FindWindow(wh =>
+            wh.GetClassName().Equals("Sandbox:" + index + ":vguiPopupWindow") &&
+            (wh.GetWindowText().StartsWith("Steam - ") ||
              wh.GetWindowText().StartsWith("Steam — ")));
         }
 

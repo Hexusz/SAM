@@ -51,7 +51,16 @@ namespace SAM
             get { return DescriptionBox.Text; }
             set { DescriptionBox.Text = value; }
         }
-
+        public bool DstAccountIndex
+        {
+            get { return DstCheckBox.IsChecked.Value; }
+            set { DstCheckBox.IsChecked = value; }
+        }
+        public bool MasterAccountIndex
+        {
+            get { return MasterCheckBox.IsChecked.Value; }
+            set { MasterCheckBox.IsChecked = value; }
+        }
         public bool AutoLogAccountIndex { get; set; }
 
         public string AviText { get; set; }

@@ -164,7 +164,8 @@ namespace SAM
             { "VAC Bans", VAC_BANS_COLUMN_INDEX },
             { "Game Bans", GAME_BANS_COLUMN_INDEX},
             { "Economy Ban", ECO_BAN_COLUMN_INDEX },
-            { "Last Ban (Days)", LAST_BAN_COLUMN_INDEX }
+            { "Last Ban (Days)", LAST_BAN_COLUMN_INDEX },
+            { "Tags", LAST_BAN_COLUMN_INDEX }
         };
 
         public void HandleDeprecatedSettings()

@@ -28,11 +28,15 @@ namespace SAM
         public string Description { get; set; }
 
         public bool CommunityBanned { get; set; }
+        public bool DstAccount { get; set; }
+        public bool MasterAccount { get; set; }
 
         public bool VACBanned { get; set; }
 
         public int NumberOfVACBans { get; set; }
         public int DaysSinceLastBan { get; set; }
+
+        public string TagsAll { get; set; }
 
         public int NumberOfGameBans { get; set; }
 

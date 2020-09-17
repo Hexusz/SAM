@@ -31,5 +31,7 @@
         <Button Name="OKButton" Content="OK" Grid.Column="0" Margin="120,286,0,0" Click="OKButton_Click" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" />
         <Button Name="CancelButton" Content="Cancel" Margin="225,286,0,0" Click="CancelButton_Click" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" />
         <CheckBox x:Name="autoLogCheckBox" Content="Auto Login" HorizontalAlignment="Left" Margin="120,252,0,0" VerticalAlignment="Top"/>
-    </Grid>
+		<CheckBox x:Name="DstCheckBox" Content="DST" HorizontalAlignment="Left" Margin="225,252,0,0" VerticalAlignment="Top"/>
+		<CheckBox x:Name="MasterCheckBox" Content="Master" HorizontalAlignment="Left" Margin="304,252,0,0" VerticalAlignment="Top"/>
+	</Grid>
 </Controls:MetroWindow>
