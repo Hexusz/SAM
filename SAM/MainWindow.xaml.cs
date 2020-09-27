@@ -2360,6 +2360,7 @@ namespace SAM
                         Process GameProcess = Process.GetProcessesByName("dontstarve_steam").FirstOrDefault();
                         if (GameProcess != null)
                         {
+                            startTimer = true;
                             if (startTimer == true) { timerCount++; }
                             VAMemory vam = new VAMemory("dontstarve_steam");
                             var hWnd = FindWindow("opengles2.0", "Don't Starve Together");
@@ -2375,17 +2376,8 @@ namespace SAM
                             Int32 Basefifthvalue = vam.ReadInt32(Base7);
 
                             Console.WriteLine(Basefifthvalue);
-                            if (Basefifthvalue == 1734831948)
-                            { startTimer = true; }
-                            else if (Basefifthvalue == 1852141647)
-                            {
-                                Thread.Sleep(200);
-                                PostMessage(hWnd, WM_LBUTTONDOWN, 1, 0);
-                                PostMessage(hWnd, WM_LBUTTONUP, 0, 0);
-                                Thread.Sleep(200);
-                                timerCount++;
-                            }
-                            if (timerCount>=25 && Basefifthvalue != 1852141647) 
+
+                            if (timerCount>=47) 
                             {
                                 startTimer = false;
                                 timerCount = 0;
